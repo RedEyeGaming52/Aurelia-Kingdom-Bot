@@ -61,7 +61,7 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place")
-	const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
+	const collectormessageplace = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessage.on('collect', message => {
 		var msglow = message.content.toLowerCase();
         	if ([type][msglow] == undefined) {
@@ -69,9 +69,9 @@ client.on('message', message => {
 			collectormessage.stop();
         	} else {
 			var nameplace =  msglow;
+			sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
 		}
 	})
-        sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
         break;
       case "?":
         message.channel.send("coming soon")
