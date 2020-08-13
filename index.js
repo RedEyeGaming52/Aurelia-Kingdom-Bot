@@ -17,9 +17,8 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
 channel.send(Embed);
 }
 
-client.user.setAvatar(ProfilePicture);
-
 client.on('ready', () => {
+  client.user.setAvatar(ProfilePicture);
   client.user.setStatus('online', "auk-?")
   client.user.setPresence({
         game: {
