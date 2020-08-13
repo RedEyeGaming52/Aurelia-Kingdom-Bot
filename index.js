@@ -62,11 +62,11 @@ client.on('message', message => {
       case "place":
 	message.channel.send("type the name of the place")
 	const collectormessageplace = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
-        collectormessage.on('collect', message => {
+        collectormessageplace.on('collect', message => {
 		var msglow = message.content.toLowerCase();
         	if ([type][msglow] == undefined) {
 			message.channel.send("error 404 : not found!")
-			collectormessage.stop();
+			collectormessageplace.stop();
         	} else {
 			var nameplace =  msglow;
 			sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
