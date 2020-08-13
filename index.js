@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Guild = new Discord.Guild();
 const prefix = process.env.prefix
-const ProfilePicture = 'https://cdn.discordapp.com/icons/699949542082215946/fa69e67567fe9f6276c27369d4f272e5.png?size=512'
+const ProfilePicture = 'https://cdn.discordapp.com/icons/699949542082215946/fa69e67567fe9f6276c27369d4f272e5.png?size=256'
 
 function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
   const Embed = new Discord.MessageEmbed()
