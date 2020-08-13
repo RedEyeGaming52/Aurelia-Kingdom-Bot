@@ -64,7 +64,7 @@ client.on('message', message => {
 	const collectormessageplace = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessageplace.on('collect', message => {
 		var msglow = message.content.toLowerCase();
-        	if ([type][msglow] == undefined) {
+        	if ([msgnow][msglow] == undefined) {
 			message.channel.send("error 404 : not found!")
 			collectormessageplace.stop();
         	} else {
