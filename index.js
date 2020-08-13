@@ -29,7 +29,7 @@ client.on('message', message => {
 	.setTimestamp()
 	.setFooter('Aurelia Kingdom Bot', ProfilePicture);
 
-channel.send(Embed);
+message.channel.send(Embed);
 }
   if (msglow.startsWith(prefix)) {
     var msgnow = msglow.slice(4)
