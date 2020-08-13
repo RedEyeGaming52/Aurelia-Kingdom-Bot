@@ -7,12 +7,12 @@ const ProfilePicture = 'https://cdn.discordapp.com/icons/699949542082215946/fa69
 function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
   const Embed = new Discord.MessageEmbed()
 	.setColor('#ffff00')
-	.setTitle(PlaceName)
+	/*.setTitle(PlaceName)
 	.setURL(LinkTrello)
 	.setDescription('Some description here')
 	.setThumbnail(EmbedThumbnail)
 	.setTimestamp()
-	//.setFooter('Aurelia Kingdom Bot', ProfilePicture);
+	.setFooter('Aurelia Kingdom Bot', ProfilePicture)*/;
 
 channel.send(Embed);
 }
