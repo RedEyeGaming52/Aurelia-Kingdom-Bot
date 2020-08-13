@@ -22,11 +22,12 @@ message.channel.send(Embed);
 function collectMessage(type) {
   const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessage.on('collect', message => {
-          if ([type][message] == undefined) {
-		message.channel.send("error 404 : not found!")
-		collectormessage.stop();
-        } else {
-		return message;
+        	if ([type][message] == undefined) {
+			message.channel.send("error 404 : not found!")
+			collectormessage.stop();
+        	} else {
+			return message;
+		}
 	})
 }
 		
