@@ -34,6 +34,7 @@ client.on('message', message => {
   
   if (msglow.startsWith(prefix)) {
     var msgnow = msglow.slice(5)
+    console.log(msgnow)
     switch(msgnow) {
       case "invite":
         message.channel.send("https://discord.com/api/oauth2/authorize?client_id=743150383496429649&scope=bot&permissions=281664")
