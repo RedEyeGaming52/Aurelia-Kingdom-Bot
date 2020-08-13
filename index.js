@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Guild = new Discord.Guild();
 const prefix = process.env.prefix
-var fs = require('fs');
+const fs = require('fs');
 const place = require('./place.json')
 const ProfilePicture = 'https://cdn.discordapp.com/icons/699949542082215946/fa69e67567fe9f6276c27369d4f272e5.png?size=256'
 
@@ -60,9 +60,9 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place")
-	var nameplace = collectMessage(msgnow);
+	/*var nameplace = collectMessage(msgnow);
         sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
-        break;
+        break;*/
       case "?":
         message.channel.send("coming soon")
         break;
