@@ -19,7 +19,7 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
 message.channel.send(Embed);
 }
 
-function collectMessage(type,msg) {
+/*function collectMessage(type,msg) {
   const collectormessage = new Discord.MessageCollector(msg.channel, m => m.author.id == msg.author.id, { time: 100 });
         collectormessage.on('collect', message => {
 		var msglow = message.content.toLowerCase();
@@ -30,7 +30,7 @@ function collectMessage(type,msg) {
 			return msglow;
 		}
 	})
-}
+}*/
 		
 client.on('ready', () => {
   client.user.setAvatar(ProfilePicture);
@@ -61,7 +61,16 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place")
-	var nameplace = collectMessage(msgnow,message);
+	const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
+        collectormessage.on('collect', message => {
+		var msglow = message.content.toLowerCase();
+        	if ([type][msglow] == undefined) {
+			message.channel.send("error 404 : not found!")
+			collectormessage.stop();
+        	} else {
+			var nameplace =  msglow;
+		}
+	})
         sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
         break;
       case "?":
