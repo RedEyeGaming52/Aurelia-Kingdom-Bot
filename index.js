@@ -33,7 +33,7 @@ client.on('message', message => {
   var msglow = message.content.toLowerCase();
   
   if (msglow.startsWith(prefix)) {
-    var msgnow = msglow.slice(5)
+    var msgnow = msglow.slice(4)
     console.log(msgnow)
     switch(msgnow) {
       case "invite":
