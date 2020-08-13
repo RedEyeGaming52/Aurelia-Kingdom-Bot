@@ -19,14 +19,15 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
 message.channel.send(Embed);
 }
 
-function collectMessage(type,message) {
-  const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
+function collectMessage(type,msg) {
+  const collectormessage = new Discord.MessageCollector(msg.channel, m => m.author.id == msg.author.id, { time: 100 });
         collectormessage.on('collect', message => {
-        	if ([type][message] == undefined) {
+		var msglow = message.content.toLowerCase();
+        	if ([type][msglow] == undefined) {
 			message.channel.send("error 404 : not found!")
 			collectormessage.stop();
         	} else {
-			return message;
+			return msglow;
 		}
 	})
 }
