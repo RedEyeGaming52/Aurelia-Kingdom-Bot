@@ -10,6 +10,12 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
 	.setTitle(PlaceName)
 	.setURL(LinkTrello)
 	.setDescription('Some description here')
+  	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
 	.setThumbnail(EmbedThumbnail)
 	.setTimestamp()
 	.setFooter('Aurelia Kingdom Bot', ProfilePicture);
