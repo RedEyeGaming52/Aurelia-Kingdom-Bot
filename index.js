@@ -13,7 +13,12 @@ client.on('ready', () => {
         }
     });
   console.log('I am ready!');
-	
+});
+
+client.on('message', message => {
+  var sender = message.author.username;
+  var msglow = message.content.toLowerCase();
+  
   function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
   const Embed = new Discord.MessageEmbed()
 	.setColor('#ffff00')
@@ -26,12 +31,6 @@ client.on('ready', () => {
 
 channel.send(Embed);
 }
-});
-
-client.on('message', message => {
-  var sender = message.author.username;
-  var msglow = message.content.toLowerCase();
-  
   if (msglow.startsWith(prefix)) {
     var msgnow = msglow.slice(4)
     console.log(msgnow)
