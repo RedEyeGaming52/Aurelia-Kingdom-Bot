@@ -60,9 +60,9 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place")
-	/*var nameplace = collectMessage(msgnow);
+	var nameplace = collectMessage(msgnow);
         sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
-        break;*/
+        break;
       case "?":
         message.channel.send("coming soon")
         break;
