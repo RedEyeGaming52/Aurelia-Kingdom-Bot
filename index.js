@@ -64,12 +64,11 @@ client.on('message', message => {
 	const collectormessageplace = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessageplace.on('collect', message => {
 		var msglow = message.content.toLowerCase();
-        	if ([msgnow][msglow] == undefined) {
+        	if (place[msglow] == undefined) {
 			message.channel.send("error 404 : not found!")
 			collectormessageplace.stop();
         	} else {
-			var nameplace =  msglow;
-			sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
+			sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic);
 		}
 	})
         break;
