@@ -4,19 +4,6 @@ const Guild = new Discord.Guild();
 const prefix = process.env.prefix
 const ProfilePicture = 'https://cdn.discordapp.com/icons/699949542082215946/fa69e67567fe9f6276c27369d4f272e5.png?size=256'
 
-function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
-  const Embed = new Discord.MessageEmbed()
-	.setColor('#ffff00')
-	/*.setTitle(PlaceName)
-	.setURL(LinkTrello)
-	.setDescription('Some description here')
-	.setThumbnail(EmbedThumbnail)
-	.setTimestamp()
-	.setFooter('Aurelia Kingdom Bot', ProfilePicture)*/;
-
-channel.send(Embed);
-}
-
 client.on('ready', () => {
   client.user.setAvatar(ProfilePicture);
   client.user.setStatus('online', "auk-?")
@@ -26,6 +13,19 @@ client.on('ready', () => {
         }
     });
   console.log('I am ready!');
+	
+  function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
+  const Embed = new Discord.MessageEmbed()
+	.setColor('#ffff00')
+	.setTitle(PlaceName)
+	.setURL(LinkTrello)
+	.setDescription('Some description here')
+	.setThumbnail(EmbedThumbnail)
+	.setTimestamp()
+	.setFooter('Aurelia Kingdom Bot', ProfilePicture);
+
+channel.send(Embed);
+}
 });
 
 client.on('message', message => {
