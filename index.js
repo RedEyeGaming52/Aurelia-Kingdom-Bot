@@ -24,8 +24,8 @@ client.on('message', message => {
 	.setColor('#ffff00')
 	.setTitle(PlaceName)
 	.setURL(LinkTrello)
+   	.setImage(EmbedThumbnail)
 	.setDescription('Some description here')
-	.setThumbnail(EmbedThumbnail)
 	.setTimestamp()
 	.setFooter('Aurelia Kingdom Bot', ProfilePicture);
 
