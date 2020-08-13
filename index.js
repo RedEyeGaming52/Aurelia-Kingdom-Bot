@@ -19,7 +19,7 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
 message.channel.send(Embed);
 }
 
-function collectMessage(type) {
+function collectMessage(type,message) {
   const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessage.on('collect', message => {
         	if ([type][message] == undefined) {
@@ -60,7 +60,7 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place")
-	var nameplace = collectMessage(msgnow);
+	var nameplace = collectMessage(msgnow,message);
         sendEmbedPlace(place[nameplace].name,place[nameplace].trellolink,place[nameplace].trellopic);
         break;
       case "?":
