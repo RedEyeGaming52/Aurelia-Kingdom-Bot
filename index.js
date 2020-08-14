@@ -48,7 +48,6 @@ client.on('message', message => {
   var msglow = message.content.toLowerCase();
   if (msglow.startsWith(prefix)) {
     var msgnow = msglow.slice(4)
-    console.log(msgnow)
     if (msgnow.includes("invite")) {
 	    const InviteEmbed = new Discord.MessageEmbed()
 		.setColor('#ffff00')
@@ -62,12 +61,14 @@ client.on('message', message => {
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:100000});
 	    	collectMessagePlace.once('collect', response => {
 			msglow = response.content.toLowerCase();
-			console.log(msglow)
 			if (place[msglow] == undefined) {
 				message.channel.send("Error : Place not found")
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
 			}
+		})
+	    	collectMessagePlace.once('end', collected => {
+			message.channel.send("I'm waiting for so long")
 		})
     } else if (msgnow == "?") {
 	       message.channel.send("coming soon")
