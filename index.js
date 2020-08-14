@@ -71,7 +71,7 @@ client.on('message', message => {
         	} else {
 			sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic);
 		}
-	})
+	});
         break;
       case "?":
         message.channel.send("coming soon")
