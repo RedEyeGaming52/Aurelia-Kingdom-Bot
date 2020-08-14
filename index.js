@@ -59,7 +59,6 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 		sendEmbedPlace(place.bank.name,place.bank.trellolink,place.bank.trellopic);
-	})
     } else if (msgnow == "?") {
 	       message.channel.send("coming soon")
     } else {
