@@ -61,9 +61,10 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place").then(() => {
-	message.channel.awaitMessages(m => m.author.id == message.author.id, { max: 1, time: 300000000, errors: ['time'] })
+	message.channel.awaitMessages(response => response.author.id == message.author.id, { max: 1, time: 300000000, errors: ['time'] })
 		.then(collected => {
-			var msglow = m.content.toLowerCase();
+			console.log(response)
+			msglow = response.content.toLowerCase();
         		if (place[msglow] == undefined) {
 				message.channel.send("error 404 : not found!")
         		} else {
