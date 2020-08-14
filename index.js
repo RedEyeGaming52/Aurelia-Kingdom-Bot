@@ -61,7 +61,7 @@ client.on('message', message => {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:100000});
 	    	collectMessagePlace.once('collect', response => {
-			msglow = response.content.toLowerCase
+			msglow = response.content.toLowerCase();
 			console.log(msglow)
 			if (place[msglow] == undefined) {
 				message.channel.send("Error : Place not found")
