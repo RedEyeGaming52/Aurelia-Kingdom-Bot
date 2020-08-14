@@ -46,7 +46,7 @@ client.on('message', message => {
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
 		for (var item in place) {
-			if place.hasOwnProperty(item) {
+			if (place.hasOwnProperty(item)) {
 				msglow = msglow.concat(place[item])+"/n");
 			}
 		}
