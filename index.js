@@ -45,9 +45,7 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
-		var list = place.keys(place);
-		var msglow = "";
-		for (var item in list) {
+		for (var item in place) {
 			msglow = msglow.concat(item+"/n");
 		}
 		message.channel.send(msglow)
