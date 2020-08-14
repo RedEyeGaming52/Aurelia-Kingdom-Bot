@@ -58,16 +58,7 @@ client.on('message', message => {
 		.setFooter('Aurelia Kingdom Bot', ProfilePicture);
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
-	    	message.channel.send("type the name of the place")
-		const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 10 });
-        	collectormessage.on('collect', m => {
-		msglow = m.content.toLowerCase();
-        	if (place[msglow] == undefined) {
-			message.channel.send("error 404 : not found!")
-			collectormessage.stop();
-        	} else {
-			sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic);
-		}
+		sendEmbedPlace(place.bank.name,place.bank.trellolink,place.bank.trellopic);
 	})
     } else if (msgnow == "?") {
 	       message.channel.send("coming soon")
