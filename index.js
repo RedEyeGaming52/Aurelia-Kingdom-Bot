@@ -45,12 +45,12 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
-		for (var item in place) {
+		/*for (var item in place) {
 			if (place.hasOwnProperty(item)) {
 				msglow = msglow.concat(place[item]+"/n");
 			}
-		}
-		message.channel.send(msglow)
+		}*/
+		message.channel.send("sorry, this command is broken")
 	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
