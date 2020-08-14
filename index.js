@@ -60,11 +60,10 @@ client.on('message', message => {
     } else if (msgnow.includes("place")) {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:100000});
-	    	collectMessagePlace.once('collect', message => {
-			msglow = message.content.toLowerCase
+	    	collectMessagePlace.once('collect', response => {
+			msglow = response.content.toLowerCase
 			if (place[msglow] == undefined) {
 				message.channel.send("Error : Place not found")
-				collectMessagePlace.stop()
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
 			}
