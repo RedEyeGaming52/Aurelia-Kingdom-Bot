@@ -62,7 +62,7 @@ client.on('message', message => {
       case "place":
 	message.channel.send("type the name of the place")
 	const collectormessageplace = message.channel.createMessageCollector(m => m.author.id == message.author.id, { time: 100 });
-        collectormessageplace.on('collect', message => {
+        collectormessageplace.on('collect', m => {
 		var msglow = message.content.toLowerCase();
 		console.log(place[msglow] == undefined);
         	if (place[msglow] == undefined) {
