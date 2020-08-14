@@ -60,22 +60,19 @@ client.on('message', message => {
         message.channel.send(InviteEmbed)
         break;
       case "place":
-	message.channel.send("type the name of the place").then(() => {
-	message.channel.awaitMessages(response => response.author.id == message.author.id, { max: 1, time: 300000000, errors: ['time'] })
-		.then(collected => {
-			console.log(response)
-			msglow = response.content.toLowerCase();
-        		if (place[msglow] == undefined) {
-				message.channel.send("error 404 : not found!")
-        		} else {
-				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic);
-			}
-		})
-		.catch(collected => {
-			message.channel.send('uhh, hello ?');
-		});
-	});
-        break;
+	message.channel.send("type the name of the place")
+	const collectormessage = new Discord.MessageCollector(msg.channel, m => m.author.id == msg.author.id, { time: 100 });
+        collectormessage.on('collect', m => {
+		msglow = m.content.toLowerCase();
+        	if (place[msglow] == undefined) {
+			message.channel.send("error 404 : not found!")
+			collectormessage.stop();
+			break;
+        	} else {
+			sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic);
+			break;
+		}
+	})
       case "?":
         message.channel.send("coming soon")
         break;
