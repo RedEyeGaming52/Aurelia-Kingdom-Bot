@@ -50,7 +50,7 @@ client.on('message', message => {
 				msglow = msglow.concat(place[item]+"/n");
 			}
 		}*/
-		message.channel.send("sorry, this command is broken")
+		message.channel.send("sorry, this command is broken");
 	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
