@@ -61,7 +61,7 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place").then(() => {
-	message.channel.awaitMessages(m => m.author.id == message.author.id, { max: 1, time: 10, errors: ['time'] })
+	message.channel.awaitMessages(m => m.author.id == message.author.id, { max: 1, time: 100, errors: ['time'] })
 		.then(collected => {
 			var msglow = message.content.toLowerCase();
 			console.log(place[msglow] == undefined);
