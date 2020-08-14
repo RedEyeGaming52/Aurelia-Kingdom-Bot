@@ -49,35 +49,30 @@ client.on('message', message => {
   if (msglow.startsWith(prefix)) {
     var msgnow = msglow.slice(4)
     console.log(msgnow)
-    switch(msgnow) {
-      case "invite":
-	const InviteEmbed = new Discord.MessageEmbed()
-	.setColor('#ffff00')
-	.setTitle("Click this link")
-	.setURL("https://discord.com/api/oauth2/authorize?client_id=743150383496429649&scope=bot&permissions=281664")
-	.setTimestamp()
-	.setFooter('Aurelia Kingdom Bot', ProfilePicture);
-        message.channel.send(InviteEmbed)
-        break;
-      case "place":
-	message.channel.send("type the name of the place")
-	const collectormessage = new Discord.MessageCollector(msg.channel, m => m.author.id == msg.author.id, { time: 100 });
-        collectormessage.on('collect', m => {
+    if (msgnow.includes("invite")) {
+	    const InviteEmbed = new Discord.MessageEmbed()
+		.setColor('#ffff00')
+		.setTitle("Click this link")
+		.setURL("https://discord.com/api/oauth2/authorize?client_id=743150383496429649&scope=bot&permissions=281664")
+		.setTimestamp()
+		.setFooter('Aurelia Kingdom Bot', ProfilePicture);
+        	message.channel.send(InviteEmbed)
+    } else if (msgnow.includes("place")) {
+	    	message.channel.send("type the name of the place")
+		const collectormessage = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 10 });
+        	collectormessage.on('collect', m => {
 		msglow = m.content.toLowerCase();
         	if (place[msglow] == undefined) {
 			message.channel.send("error 404 : not found!")
 			collectormessage.stop();
-			break;
         	} else {
 			sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic);
-			break;
 		}
 	})
-      case "?":
-        message.channel.send("coming soon")
-        break;
-      default:
-        message.channel.send("oops, use auk-?")
+    } else if (msgnow == "?") {
+	       message.channel.send("coming soon")
+    } else {
+		message.channel.send("oops, use auk-?")
     }
   }
 })
