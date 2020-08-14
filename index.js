@@ -6,7 +6,7 @@ const fs = require('fs');
 const place = require('./place.json')
 const ProfilePicture = 'https://cdn.discordapp.com/icons/699949542082215946/fa69e67567fe9f6276c27369d4f272e5.png?size=256'
 
-function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail) {
+function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail,message) {
   const Embed = new Discord.MessageEmbed()
 	.setColor('#ffff00')
 	.setTitle(PlaceName)
@@ -58,7 +58,7 @@ client.on('message', message => {
 		.setFooter('Aurelia Kingdom Bot', ProfilePicture);
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
-		sendEmbedPlace(place.bank.name,place.bank.trellolink,place.bank.trellopic);
+		sendEmbedPlace(place.bank.name,place.bank.trellolink,place.bank.trellopic,message);
     } else if (msgnow == "?") {
 	       message.channel.send("coming soon")
     } else {
