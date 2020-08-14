@@ -58,7 +58,8 @@ client.on('message', message => {
 		.setFooter('Aurelia Kingdom Bot', ProfilePicture);
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
-	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:1000});
+	    	message.channel.send("the place name ?")
+	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:100000});
 	    	collectMessagePlace.once('collect', message => {
 			msglow = message.content.toLowerCase
 			if (place[msglow] == undefined) {
