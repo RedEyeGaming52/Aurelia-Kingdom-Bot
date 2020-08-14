@@ -33,7 +33,7 @@ message.channel.send(Embed);
 }*/
 		
 client.on('ready', () => {
-  client.user.setAvatar(ProfilePicture);
+  client.user.setAvatar(ProfilePicture).catch(err => console.log(err));
   client.user.setStatus('online', "auk-?")
   client.user.setPresence({
         game: {
@@ -61,7 +61,7 @@ client.on('message', message => {
         break;
       case "place":
 	message.channel.send("type the name of the place");
-	const collectormessageplace = new Discord.MessageCollector(msg.channel, m => m.author.id == message.author.id, { time: 100 });
+	const collectormessageplace = new Discord.MessageCollector(message.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessageplace.on('collect', m => {
 		var msglow = message.content.toLowerCase();
 		console.log(place[msglow] == undefined);
