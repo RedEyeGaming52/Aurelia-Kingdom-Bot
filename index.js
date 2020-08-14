@@ -60,8 +60,8 @@ client.on('message', message => {
         message.channel.send(InviteEmbed)
         break;
       case "place":
-	message.channel.send("type the name of the place")
-	const collectormessageplace = message.channel.createMessageCollector(m => m.author.id == message.author.id, { time: 100 });
+	message.channel.send("type the name of the place");
+	const collectormessageplace = new Discord.MessageCollector(msg.channel, m => m.author.id == message.author.id, { time: 100 });
         collectormessageplace.on('collect', m => {
 		var msglow = message.content.toLowerCase();
 		console.log(place[msglow] == undefined);
