@@ -58,7 +58,7 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    	message.channel.send("the place name ?")
-	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:100000});
+	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
 	    	collectMessagePlace.once('collect', response => {
 			msglow = response.content.toLowerCase();
 			if (place[msglow] == undefined) {
