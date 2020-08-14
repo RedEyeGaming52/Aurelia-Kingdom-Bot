@@ -18,19 +18,6 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail,message) {
 
 message.channel.send(Embed);
 }
-
-/*function collectMessage(type,msg) {
-  const collectormessage = new Discord.MessageCollector(msg.channel, m => m.author.id == msg.author.id, { time: 100 });
-        collectormessage.on('collect', message => {
-		var msglow = message.content.toLowerCase();
-        	if ([type][msglow] == undefined) {
-			message.channel.send("error 404 : not found!")
-			collectormessage.stop();
-        	} else {
-			return msglow;
-		}
-	})
-}*/
 		
 client.on('ready', () => {
   client.user.setAvatar(ProfilePicture).catch(err => console.log(err));
@@ -57,12 +44,20 @@ client.on('message', message => {
 		.setFooter('Aurelia Kingdom Bot', ProfilePicture);
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
+	    if (msgnow.includes("list")) {
+		var list = place.keys(place);
+		var msglow = "";
+		for (var item in list) {
+			msglow = msglow.concat(item+"/n");
+		}
+		message.channel.send(msglow)
+	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
 	    	collectMessagePlace.once('collect', response => {
 			msglow = response.content.toLowerCase();
 			if (place[msglow] == undefined) {
-				message.channel.send("Error : Place not found")
+				message.channel.send("Error : Place not found/nTry to use auk-place list instead")
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
 			}
@@ -70,6 +65,7 @@ client.on('message', message => {
 	    	collectMessagePlace.once('end', collected => {
 			message.channel.send("I'm waiting for so long")
 		})
+	    }
     } else if (msgnow == "?") {
 	       message.channel.send("coming soon")
     } else {
