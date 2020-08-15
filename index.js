@@ -35,7 +35,7 @@ client.on('message', message => {
   var msglow = message.content.toLowerCase();
   if (msglow.startsWith(prefix)) {
     var msgnow = msglow.slice(4)
-    if (msgnow.includes("invite")) {
+    if (msgnow == "invite") {
 	    const InviteEmbed = new Discord.MessageEmbed()
 		.setColor('#ffff00')
 		.setTitle("Click this link")
@@ -45,10 +45,7 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
-		for (const [key,value] of Object.entries(place)) {
-			msglow = msglow.concat(key+"\n");
-			}
-		}
+		message.channel.send("coming soon")
 	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
