@@ -45,11 +45,10 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
-		for (var item in Object.keys(place)) {
-			msglow = msglow.concat(`${item}\n`);
+		for (const [key,value] of Object.entries(place)) {
+			msglow = msglow.concat(key+"\n");
 			}
 		}
-		message.channel.send("sorry, this command is broken");
 	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
@@ -57,15 +56,17 @@ client.on('message', message => {
 			msglow = response.content.toLowerCase();
 			if (place[msglow] == undefined) {
 				message.channel.send("Error : Place not found/nTry to use auk-place list instead")
+				collectMessagePlace.stop();
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
+				collectMessagePlace.stop();
 			}
 		})
 	    	collectMessagePlace.once('end', collected => {
 			message.channel.send("I'm waiting for so long")
 		})
 	    }
-    } else if (msgnow == "?") {
+    } else if (msgnow == "?" || msgnow == "help") {
 	       message.channel.send("coming soon")
     } else {
 		message.channel.send("oops, use auk-?")
