@@ -46,8 +46,8 @@ client.on('message', message => {
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
 		msglow = "";
-		for (var item in Object.keys(place)) {
-			msglow = msglow.concat(item+"\n")
+		for (const [key,value] of Object.entries(place)) {
+			msglow = msglow.concat("-"+key+"\n")
 		}
 		message.channel.send(msglow);
 	    } else {
