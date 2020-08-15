@@ -45,11 +45,10 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
-		/*for (var item in place) {
-			if (place.hasOwnProperty(item)) {
-				msglow = msglow.concat(place[item]+"/n");
+		for (var item in Object.keys(place)) {
+			msglow = msglow.concat(`${item}\n`);
 			}
-		}*/
+		}
 		message.channel.send("sorry, this command is broken");
 	    } else {
 	    	message.channel.send("the place name ?")
