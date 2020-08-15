@@ -47,16 +47,16 @@ client.on('message', message => {
 	    if (msgnow.includes("list")) {
 		msglow = "";
 		for (const [key,value] of Object.entries(place)) {
-			msglow = msglow.concat("-"+key+"\n")
+			msglow = msglow.concat("- "+key+"\n")
 		}
-		message.channel.send(msglow);
+		message.channel.send("List tempat :\n```"+msglow+"```");
 	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
 	    	collectMessagePlace.once('collect', response => {
 			msglow = response.content.toLowerCase();
 			if (place[msglow] == undefined) {
-				message.channel.send("Error : Place not found/nTry to use auk-place list instead")
+				message.channel.send("Error : Place not found\nTry to use auk-place list instead")
 				collectMessagePlace.stop();
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
