@@ -70,7 +70,6 @@ client.on('message', message => {
     } else {
 		message.channel.send("oops, use auk-?")
     }
-  }
 })
 
 client.login(process.env.token);
