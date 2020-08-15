@@ -34,5 +34,34 @@
   "desc":"empty",
   "trellolink":"https://trello.com/c/qTxAe1bj/13-abandoned-mine",
   "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc9b0748ed642f987ccf/4881cbbb240e0a93a828cf996293b0d1/2020-07-09_00.34.30.png"
+ },
+  "barn":{
+  "name":"Barn",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/qTxAe1bj/13-abandoned-mine",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc9b0748ed642f987ccf/4881cbbb240e0a93a828cf996293b0d1/2020-07-09_00.34.30.png"
+ },
+  "forbidden forest":{
+  "name":"Forbidden Forest",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/mfjHLh89/17-forbidden-forest",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fd3585c30c28e1ee4cf6/19ae256222cfd435aca7f05902a82515/2020-07-09_00.28.53.png"
+ },
+  "deep cavern":{
+  "name":"Deep Cavern",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/DftLbetH/25-deep-cavern",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f0602826743632f58d54fb9/d0e15d3b4ea514158d8ddfa557149fea/2020-07-09_00.29.14.png"
+ },
+  "quest":{
+  "name":"Quest",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/Eptb4jp0/30-quest",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f06052cc77b280e04737a4e/4c37e014b37e359c107150d944699020/2020-07-09_00.23.00.png"
+ },
+  "graveyard":{
+  "name":"Graveyard",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/lgdHrc93/39-graveyard",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f0630b49855aa45b5f06fb4/c766ce2c57559446de2368ae059f1bc6/2020-07-09_00.32.25.png"
  }
-}
