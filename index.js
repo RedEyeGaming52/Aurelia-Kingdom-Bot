@@ -45,7 +45,11 @@ client.on('message', message => {
         	message.channel.send(InviteEmbed)
     } else if (msgnow.includes("place")) {
 	    if (msgnow.includes("list")) {
-		message.channel.send("coming soon")
+		msglow = "";
+		for (var item in Object.keys(place)) {
+			msglow = msglow.concat(item+"\n")
+		}
+		message.channel.send(msglow);
 	    } else {
 	    	message.channel.send("the place name ?")
 	    	const collectMessagePlace = new Discord.MessageCollector(message.channel,response => response.author.id == message.author.id, {time:10000});
@@ -56,11 +60,7 @@ client.on('message', message => {
 				collectMessagePlace.stop();
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
-				collectMessagePlace.stop();
 			}
-		})
-	    	collectMessagePlace.once('end', collected => {
-			message.channel.send("I'm waiting for so long")
 		})
 	    }
     } else if (msgnow == "?" || msgnow == "help") {
