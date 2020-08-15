@@ -57,7 +57,6 @@ client.on('message', message => {
 			msglow = response.content.toLowerCase();
 			if (place[msglow] == undefined) {
 				if (msglow == "auk-place") {
-					message.channel.send("Paradox wouldn't happen if you do that");
 				} else {
 					message.channel.send("Error : Place not found\nTry to use auk-place list instead")
 					collectMessagePlace.stop();	
