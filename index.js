@@ -18,6 +18,18 @@ function sendEmbedPlace(PlaceName,LinkTrello,EmbedThumbnail,message) {
 
 message.channel.send(Embed);
 }
+
+const HelpEmbed = new Discord.MessageEmbed()
+	.setColor('#ffff00')
+	.setTitle('Aurelia Kingdom Bot')
+	.setAuthor('Aurelia Kingdom Bot', ProfilePicture, 'https://discord.gg/ffjNRpm')
+        .addFields(
+		{ name: 'Command List', value: 'Aurelia Kingdom Bot Command List' },
+		{ name: '\u200B', value: '\u200B' },
+	        { name: 'Places', value: '**auk-place**/n ```Usage: auk-place, and type the places name```/n **auk-place list**/n ```To see places list```', inline: true },
+	)
+	.setTimestamp()
+	.setFooter('Aurelia Kingdom Bot', ProfilePicture);
 		
 client.on('ready', () => {
   client.user.setAvatar(ProfilePicture).catch(err => console.log(err));
@@ -68,7 +80,7 @@ client.on('message', message => {
 		})
 	    }
     } else if (msgnow == "?" || msgnow == "help") {
-	       message.channel.send("coming soon")
+	       message.channel.send(HelpEmbed)
     } else {
 		message.channel.send("oops, use auk-?")
     }
