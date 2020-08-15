@@ -10,5 +10,29 @@
   "desc":"empty",
   "trellolink":"https://trello.com/c/cyyYMww8/9-portal",
   "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc6c4f11a977d896d076/8df271565df7c57c6fbac4741e9f5a25/2020-07-09_02.44.29.png"
+ },
+  "island portal":{
+  "name":"Island Portal",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/UHIm8Qt9/10-island-portal",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc76727d5b0790928aeb/1294800b9e2e4c87ba75f8e9f81654cb/2020-07-09_00.27.30.png"
+ },
+  "pvp arena":{
+  "name":"PVP Arena",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/eK6IuwHp/11-pvp-arena",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc7e43edff77e0f8b7c7/cb9b9fc81159fa8ce4e242c2aa4cab6c/2020-07-09_00.30.18.png"
+ },
+  "enchanted forest":{
+  "name":"Enchanted Forest",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/m8yCGmnr/12-enchanted-forest",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc9283878046825ae5e1/69ff0b238764e0264d80f8849bbaf102/2020-07-09_00.33.35.png"
+ },
+  "abandoned mine":{
+  "name":"Abandoned Mine",
+  "desc":"empty",
+  "trellolink":"https://trello.com/c/qTxAe1bj/13-abandoned-mine",
+  "trellopic":"https://trello-attachments.s3.amazonaws.com/5f05f0c02faa723bdddc7139/5f05fc9b0748ed642f987ccf/4881cbbb240e0a93a828cf996293b0d1/2020-07-09_00.34.30.png"
  }
 }
