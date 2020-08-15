@@ -56,8 +56,12 @@ client.on('message', message => {
 	    	collectMessagePlace.once('collect', response => {
 			msglow = response.content.toLowerCase();
 			if (place[msglow] == undefined) {
-				message.channel.send("Error : Place not found\nTry to use auk-place list instead")
-				collectMessagePlace.stop();
+				if (msglow == "auk-place") {
+					message.channel.send("Paradox wouldn't happen if you do that");
+				} else {
+					message.channel.send("Error : Place not found\nTry to use auk-place list instead")
+					collectMessagePlace.stop();	
+				}
 			} else {
 				sendEmbedPlace(place[msglow].name,place[msglow].trellolink,place[msglow].trellopic,message);
 			}
